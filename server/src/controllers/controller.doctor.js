@@ -1,5 +1,6 @@
 import serviceDoctor from "../services/service.doctor.js";
 
+
 async function Listar(req, res) {
   const name = req.query.name
 
@@ -8,4 +9,14 @@ async function Listar(req, res) {
   res.status(200).json(doctors);
 }
 
-export default { Listar }
+async function Inserir(req, res) {
+  const { name } = req.body;
+
+  const data = {
+    name
+  }
+
+  return res.json(data);
+}
+
+export default { Listar, Inserir }
