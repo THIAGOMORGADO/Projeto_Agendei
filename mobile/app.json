@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "Agendei",
+    "slug": "agendei",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/Icon.png",
+    "userInterfaceStyle": "light",
+    "androidStatusBar": {
+      "hidden": true
+    },
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0D6EFD"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0D6EFD"
+      },
+      "package": "com.anonymous.mobile"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "69fb4c6d-6f09-41be-a4f9-c453024805d3"
+      }
+    },
+    "owner": "thiago_morgado"
+  }
+}
