@@ -14,7 +14,20 @@ async function Inserir(req, res) {
   const createDoctor = await serviceDoctor.Inserir(name, specialty, icon)
 
 
-  return res.json(createDoctor);
+  return res.status(201).json(createDoctor);
+}
+async function Editar(req, res) {
+  const { id_doctor } = req.params;
+  const { name, specialty, icon } = req.body;
+
+  const doctor = await serviceDoctor.Editar(id_doctor, name, specialty, icon)
+
+
+  return res.status(200).json(doctor)
 }
 
-export default { Listar, Inserir }
+
+
+
+
+export default { Listar, Inserir, Editar };

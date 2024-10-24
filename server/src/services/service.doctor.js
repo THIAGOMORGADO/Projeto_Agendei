@@ -11,6 +11,13 @@ async function Inserir(name, specialty, icon) {
 
   return doctors;
 }
+async function Editar(id_doctor, name, specialty, icon) {
+
+  const doctor = await repoDoctor.Editar(id_doctor, name, specialty, icon)
+
+  return doctor;
+
+}
 
 
-export default { Listar, Inserir };
+export default { Listar, Inserir, Editar, };

@@ -24,6 +24,16 @@ async function Inserir(name, specialty, icon) {
   return doctor[0];
 
 }
+async function Editar(id_doctor, name, specialty, icon) {
 
+  // SQL Query to update a record in the "products" table.
+  let sql = `update doctors set name = ?, specialty = ?, icon = ? where id_doctor = ?`
 
-export default { Listar, Inserir }
+  const response = await query(sql, [name, specialty, icon, id_doctor])
+
+  console.log("Aqui esta minha query", response)
+
+  return { id_doctor };
+}
+
+export default { Listar, Inserir, Editar }

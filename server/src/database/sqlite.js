@@ -18,7 +18,7 @@ function query(command, params, method = 'all') {
 
 const SQLITE = sqlite3.verbose();
 
-const db = new SQLITE.Database('./src/database/banco.db', SQLITE.OPEN_READWRITE, (err) => {
+const db = new SQLITE.Database('./src/database/agendei.db', SQLITE.OPEN_READWRITE, (err) => {
   if (err) {
     return console.log("Erro na conexao do banco de dados" + err.message)
   }
