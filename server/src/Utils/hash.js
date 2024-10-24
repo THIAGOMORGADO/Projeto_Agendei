@@ -7,8 +7,11 @@ export async function hashPass(passord, roud) {
 
   return hash;
 }
-export async function compareHash(pass) {
+export async function compareHash(password, oldPassword,) {
 
+  const isMatch = await bcrypt.compare(password, oldPassword);
+
+  return isMatch;
 
 
 }

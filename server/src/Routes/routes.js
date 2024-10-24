@@ -11,5 +11,6 @@ router.delete("/doctors/:id_doctor", controllerDoctor.Excluir);
 
 
 router.post("/users/register", controllerUser.Inserir)
+router.post("/users/login", controllerUser.Login)
 
 export default router;
