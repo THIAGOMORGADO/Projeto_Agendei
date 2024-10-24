@@ -11,10 +11,10 @@ async function Listar(req, res) {
 
 async function Inserir(req, res) {
   const { name, specialty, icon } = req.body;
-  const createDocotor = await serviceDoctor.Inserir({ name, specialty, icon })
+  const createDoctor = await serviceDoctor.Inserir(name, specialty, icon)
 
 
-  return res.json(createDocotor);
+  return res.json(createDoctor);
 }
 
 export default { Listar, Inserir }

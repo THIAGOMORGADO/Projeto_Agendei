@@ -21,7 +21,7 @@ async function Inserir(name, specialty, icon) {
 
   const doctor = await query(sql, [name, specialty, icon]);
 
-  return doctor;
+  return doctor[0];
 
 }
 
