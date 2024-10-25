@@ -1,5 +1,6 @@
 import repositoryUser from '../repositorys/repository.user.js'
 import { compareHash, hashPass } from '../Utils/hash.js';
+import jwt from '../Utils/token.js';
 
 async function Inserir(name, email, password) {
 
@@ -7,7 +8,9 @@ async function Inserir(name, email, password) {
 
   const user = await repositoryUser.Inserir(name, email, passwordHash);
 
-  return res.status(201).json(user);
+  user.token = jwt.createToken(user.id_user)
+
+  return user;
 }
 async function Login(email, password) {
   const user = await repositoryUser.ListarByEmail(email);
@@ -17,14 +20,14 @@ async function Login(email, password) {
     return [];
   } else {
     if (comparePasswords) {
-      delete user.password
+      delete user.password;
+
+      user.token = jwt.createToken(user.id_user)
       return user;
     } else {
       return [];
     }
   }
-
-  return user;
 }
 
 export default { Inserir, Login, }

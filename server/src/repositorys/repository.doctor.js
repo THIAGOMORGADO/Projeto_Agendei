@@ -29,9 +29,7 @@ async function Editar(id_doctor, name, specialty, icon) {
   // SQL Query to update a record in the "products" table.
   let sql = `update doctors set name = ?, specialty = ?, icon = ? where id_doctor = ?`
 
-  const response = await query(sql, [name, specialty, icon, id_doctor])
-
-  console.log("Aqui esta minha query", response)
+  await query(sql, [name, specialty, icon, id_doctor])
 
   return { id_doctor };
 }
