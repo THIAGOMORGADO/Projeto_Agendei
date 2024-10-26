@@ -20,6 +20,6 @@ router.delete("/doctors/:id_doctor", controllerDoctors.Excluir);
 // Services Docotors
 router.get("/doctors/:id_doctor/services", controllerDoctors.ListarServices);
 
-router.get("/appointments", ControllerAppointments.Listar)
+router.get("/appointments", ControllerAppointments.ListarByUser)
 
 export default router;
