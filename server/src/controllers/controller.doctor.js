@@ -36,8 +36,12 @@ export const controllerDoctors = {
 
   },
 
-  async ListarServicos(req, res) {
+  async ListarServices(req, res) {
     const { id_doctor } = req.params
+    const serv = await serviceDoctor.ListarServices(id_doctor);
+
+    return res.status(200).json(serv)
+
   }
 
 }

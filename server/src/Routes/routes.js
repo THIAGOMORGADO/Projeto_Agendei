@@ -2,6 +2,7 @@ import { Router } from "express";
 import { controllerDoctors } from "../controllers/controller.doctor.js";
 import controllerUser from "../controllers/controle.user.js";
 import jwt from "../Utils/token.js";
+import ControllerAppointments from "../controllers/controller.appointments.js";
 
 const router = Router();
 
@@ -16,6 +17,9 @@ router.post("/doctors", controllerDoctors.Inserir);
 router.put("/doctors/:id_doctor", controllerDoctors.Editar);
 router.delete("/doctors/:id_doctor", controllerDoctors.Excluir);
 
-router.get("/doctors/:id_doctor/services", controllerDoctors.ListarServicos);
+// Services Docotors
+router.get("/doctors/:id_doctor/services", controllerDoctors.ListarServices);
+
+router.get("/appointments", ControllerAppointments.Listar)
 
 export default router;
