@@ -5,13 +5,20 @@ import jwt from '../Utils/token.js'
 
 const router = Router();
 
-router.get("/doctors", jwt.ValidateToken, controllerDoctor.Listar);
+
+router.post("/users/register", controllerUser.Inserir)
+router.post("/users/login", controllerUser.Login)
+
+
+// Rotas a baixo so Funciona se eu Informar o Token
+router.use(jwt.ValidateToken);
+
+router.get("/doctors", controllerDoctor.Listar);
 router.post("/doctors", controllerDoctor.Inserir);
 router.put("/doctors/:id_doctor", controllerDoctor.Editar);
 router.delete("/doctors/:id_doctor", controllerDoctor.Excluir);
 
 
-router.post("/users/register", controllerUser.Inserir)
-router.post("/users/login", controllerUser.Login)
+
 
 export default router;
